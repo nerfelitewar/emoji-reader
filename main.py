@@ -31,6 +31,8 @@ with open('text.txt') as r:
 
     for j in x:
         emoji=emj.emojize(j) 
+        if emj.is_emoji(emoji)==True:
+            pass
         # list_emoji=[]   
         # for emoji in emoji: 
         #     e=emj.is_emoji(emoji)
