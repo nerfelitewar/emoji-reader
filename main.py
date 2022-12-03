@@ -30,9 +30,13 @@ with open('text.txt') as r:
     print(x)
 
     for j in x:
-        if len(j)==1:
-            emoji=emj.emojize(j)       
-    print(emoji)
+        emoji=emj.emojize(j) 
+        # list_emoji=[]   
+        # for emoji in emoji: 
+        #     e=emj.is_emoji(emoji)
+        #     if e==True:
+        #         list_emoji.append(e)
+        # print(list_emoji)
 
 
 
@@ -40,13 +44,15 @@ with open('text.txt') as r:
     print(data_reading)
     read=data.replace("_",' ')
     Engine.say(read) #should not say underscore bs WORKS :D 
-    Engine.runAndWait()
+   
 
     
     obj=emoji_emotion.emj_emo
 
-    print("Person is feeling "+random.choice(obj.get(emoji)))
-
+    say_emotion=("Person is feeling "+random.choice(obj.get(emoji)))
+    print(say_emotion)
+    Engine.say(say_emotion)
+    Engine.runAndWait()
 
 
 
