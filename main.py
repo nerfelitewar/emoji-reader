@@ -22,23 +22,32 @@ with open('text.txt') as r:
     data=r.read()
     data_reading=emj.emojize(data)
 
-    x=[]
-    for i in data_reading.split(' '):
-        x.append(i)
+    # x=[]
+    # for i in data_reading.split(' '):
+    #     x.append(i)
         
 
-    print(x)
+    # print(x)
 
-    for j in x:
-        emoji=emj.emojize(j) 
-        if emj.is_emoji(emoji)==True:
-            pass
-        # list_emoji=[]   
-        # for emoji in emoji: 
-        #     e=emj.is_emoji(emoji)
-        #     if e==True:
-        #         list_emoji.append(e)
-        # print(list_emoji)
+    # for j in x:
+    #     emoji=emj.emojize(j) 
+    #     if emj.is_emoji(emoji)==True:
+    #         pass
+
+    obj=emoji_emotion.emj_emo #object for all emoji hash mapped
+    list_emotion=[]
+    for i in data_reading:
+        if emj.is_emoji(i)==True:
+            list_emotion.append(i)
+
+    
+
+    for j in list_emotion:
+        str_emotion=""
+        emoji=j
+        str_emotion.join(obj.get(j))
+
+
 
 
 
@@ -49,7 +58,7 @@ with open('text.txt') as r:
    
 
     
-    obj=emoji_emotion.emj_emo
+    
 
     say_emotion=("Person is feeling "+random.choice(obj.get(emoji)))
     print(say_emotion)
