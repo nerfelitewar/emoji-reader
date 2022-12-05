@@ -5,6 +5,7 @@ import sys
 import pyttsx3
 from emotion import emoji_emotion
 import random
+from ordered_set import OrderedSet
 
 with open('text.txt','w',encoding="utf-8") as f:
     w=input('Say ur msg- ')
@@ -33,7 +34,7 @@ with open('text.txt') as r:
     #NOTE- Maybe i should use {} sets so that no repetition ^^^
     
     str_emotion=["The person is feeling "]
-    for j in set(list_emotion):
+    for j in OrderedSet(list_emotion):
         emo_val=random.choice(obj.get(j)) #emoji feelings from the list
         str_emotion.append(emo_val+" ")
     
