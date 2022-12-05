@@ -34,22 +34,9 @@ with open('text.txt') as r:
     
     str_emotion=[]
     for j in list_emotion:
-        emo_val=random.choice(obj.get(j))
+        emo_val=random.choice(obj.get(j)) #emoji feelings from the list
         str_emotion.append(emo_val)
     
-
-
-
-
-
-
-        
-    
-
-
-
-
-
 
 
 
@@ -57,12 +44,9 @@ with open('text.txt') as r:
     print(data_reading)
     read=data.replace("_",' ')
     Engine.say(read) #should not say underscore bs WORKS :D 
-   
 
-    
-    
 
-    say_emotion=("Person is feeling ",str_emotion)
+    say_emotion=("Person is feeling "+str(str_emotion))
     print(say_emotion)
     Engine.say(say_emotion)
     Engine.runAndWait()
