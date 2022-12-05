@@ -22,17 +22,6 @@ with open('text.txt') as r:
     data=r.read()
     data_reading=emj.emojize(data)
 
-    # x=[]
-    # for i in data_reading.split(' '):
-    #     x.append(i)
-        
-
-    # print(x)
-
-    # for j in x:
-    #     emoji=emj.emojize(j) 
-    #     if emj.is_emoji(emoji)==True:
-    #         pass
 
     obj=emoji_emotion.emj_emo #object for all emoji hash mapped
     list_emotion=[]
@@ -40,12 +29,25 @@ with open('text.txt') as r:
         if emj.is_emoji(i)==True:
             list_emotion.append(i)
 
+    print(list_emotion) #all emoji list in a txt file 
+    #NOTE- Maybe i should use {} sets so that no repetition ^^^
+    
+    str_emotion=[]
+    for j in list_emotion:
+        emo_val=random.choice(obj.get(j))
+        str_emotion.append(emo_val)
     
 
-    for j in list_emotion:
-        str_emotion=""
-        emoji=j
-        str_emotion.join(obj.get(j))
+
+
+
+
+
+        
+    
+
+
+
 
 
 
@@ -60,7 +62,7 @@ with open('text.txt') as r:
     
     
 
-    say_emotion=("Person is feeling "+random.choice(obj.get(emoji)))
+    say_emotion=("Person is feeling ",str_emotion)
     print(say_emotion)
     Engine.say(say_emotion)
     Engine.runAndWait()

@@ -1,0 +1,7 @@
+x=["emoji","emoji","emoji"]
+
+emo=""
+for i in x:
+    y=obj.get(i)
+    emo.join(y)
+    
