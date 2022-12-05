@@ -9,8 +9,6 @@ from ordered_set import OrderedSet
 
 with open('text.txt','w',encoding="utf-8") as f:
     w=input('Say ur msg- ')
-    #sys.stdout.reconfigure(encoding='utf-8')
-    #w=pg.prompt("Say your msg",title="MSG")
 
     w=emj.demojize(w)
 
@@ -34,7 +32,7 @@ with open('text.txt') as r:
     #NOTE- Maybe i should use {} sets so that no repetition ^^^
     
     str_emotion=["The person is feeling "]
-    for j in OrderedSet(list_emotion):
+    for j in OrderedSet(list_emotion): #unique orderset of emojies from list 
         emo_val=random.choice(obj.get(j)) #emoji feelings from the list
         str_emotion.append(emo_val+" ")
     
@@ -45,9 +43,6 @@ with open('text.txt') as r:
     print(data_reading)
     read=data.replace("_",' ')
     Engine.say(read) #avoid saying underscore. NOTE- If user meant to put underscore? email_id: etc.
-
-    ###str_emotion=say_emotion
-    #say_emotion=("Person is feeling "+str(str_emotion))
 
     print(str_emotion)
     Engine.say(str_emotion)
