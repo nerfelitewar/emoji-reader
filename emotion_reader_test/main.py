@@ -37,7 +37,7 @@ with open('emotion_reader_test/text.txt') as r:
         str_emotion.append(emo_val+",")
 
 
-    print(Fore.LIGHTRED_EX+data_reading+Fore.RESET)
+    print(Fore.LIGHTGREEN_EX+data_reading+Fore.RESET)
     
     for emo in str_emotion:
         print(Fore.LIGHTBLACK_EX+emo,end=" "+Fore.RESET)
